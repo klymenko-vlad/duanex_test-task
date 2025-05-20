@@ -1,7 +1,7 @@
 export interface FileItem {
     name: string;
     subitems?: FileItem[];
-};
+}
 
 export const rawData: FileItem[] = [
     {
@@ -47,3 +47,10 @@ export const rawData: FileItem[] = [
         name: "FindRelated",
     },
 ]
+
+
+export function getRawData(): Promise<FileItem[]> {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve(rawData), 500);
+    });
+}
